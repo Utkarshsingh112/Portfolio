@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f5f1e8;
+  --bg-grain: #efe9dc;
+  --ink: #1a1a1a;
+  --ink-soft: #2c2c2c;
+  --muted: #6b6558;
+  --line: #d9d2c0;
+  --coral: #e85d4e;
+  --blue: #2c4ee8;
+  --mustard: #e8a93c;
+  --sage: #5b7b5a;
+  --cream-card: #ede6d3;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.font-serif { font-family: 'Fraunces', Georgia, serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Subtle grain texture overlay */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Selection */
+::selection {
+  background: var(--coral);
+  color: var(--bg);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--ink); border-radius: 0; }
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Blob blink for status */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+.pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+/* Slow tilt on hover for cards */
+.tilt-hover { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease; }
+.tilt-hover:hover { transform: translateY(-6px) rotate(-0.5deg); }
+
+/* Underline grow on links */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.link-underline:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Reveal on enter */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.rise-delay-1 { animation-delay: 0.1s; }
+.rise-delay-2 { animation-delay: 0.2s; }
+.rise-delay-3 { animation-delay: 0.3s; }
+.rise-delay-4 { animation-delay: 0.4s; }
+
+@layer base {
+  :root {
+    --background: 44 38% 93%;
+    --foreground: 0 0% 10%;
+    --card: 44 38% 93%;
+    --card-foreground: 0 0% 10%;
+    --popover: 44 38% 93%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 44 38% 95%;
+    --secondary: 40 25% 86%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 40 25% 86%;
+    --muted-foreground: 33 12% 40%;
+    --accent: 40 25% 86%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 6 78% 60%;
+    --destructive-foreground: 44 38% 95%;
+    --border: 38 28% 80%;
+    --input: 38 28% 80%;
+    --ring: 0 0% 10%;
+    --radius: 0.25rem;
+  }
+}
