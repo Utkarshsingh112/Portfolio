@@ -12,7 +12,7 @@ export const personalInfo = {
   phone: "+91 9351571387",
   resumeUrl:
     "https://drive.google.com/file/d/1y_QQzzycKH2TZ4chIy-Bx-F60Wga2mjv/view?usp=sharing",
-  avatar: "public/utkarsh.jpg",
+  avatar: "/utkarsh.jpg",
   socials: {
     github: "https://github.com/Utkarshsingh112",
     linkedin: "https://www.linkedin.com/in/utkarsh-singh10",
@@ -59,7 +59,7 @@ export const projects = [
     description:
       "A full-stack Learning Management System with an AI-powered voice assistant for hands-free course navigation and instant answers. Built with Context API for auth + course tracking, and NLP APIs for voice interaction.",
     tech: ["Next.js", "TypeScript", "Supabase", "VAPI"],
-    image: "public/lms-ai.jpg",
+    image: "/lms-ai.jpg",
     link: "https://lms-ai-ten.vercel.app/",
     github: "https://github.com/Utkarshsingh112",
     accent: "coral",
@@ -72,7 +72,7 @@ export const projects = [
     description:
       "An online platform to swap old clothes for new ones, token points, or instant cash via online payment. A real reward loop for sustainable fashion.",
     tech: ["React", "Express", "MongoDB", "Stripe", "Tailwind"],
-    image: "public/swap-wise.jpg",
+    image: "/swap-wise.jpg",
     link: "https://rewear-community-clothing-exchange.vercel.app/",
     github: "https://github.com/Utkarshsingh112",
     accent: "sage",
@@ -85,7 +85,7 @@ export const projects = [
     description:
       "A networking platform where developers sign up to follow tech news, events & happenings worldwide. Optimized image handling with Cloudinary CDN cut initial load time by 40%.",
     tech: ["Next.js", "TypeScript", "MongoDB", "Zustand", "Cloudinary"],
-    image: "public/devconnect.jpg",
+    image: "/devconnect.jpg",
     link: "https://devconnect-rluw.vercel.app/",
     github: "https://github.com/Utkarshsingh112",
     accent: "blue",
@@ -98,7 +98,7 @@ export const projects = [
     description:
       "A fully responsive personal portfolio with mobile-first design. Hit a 75 Lighthouse score via image optimization, code-splitting, and Core Web Vitals tuning.",
     tech: ["React", "Next.js", "Tailwind", "EmailJS"],
-    image: "public/previous-portfolio.jpg",
+    image: "/previous-portfolio.jpg",
     link: "https://utkarsh-portfolio-utkarsh-singhs-projects-4e5eda89.vercel.app/",
     github: "https://github.com/Utkarshsingh112",
     accent: "mustard",
