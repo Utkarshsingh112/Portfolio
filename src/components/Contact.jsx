@@ -5,6 +5,8 @@ import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { Send } from "lucide-react";
 
+import emailjs from "@emailjs/browser";
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
@@ -16,15 +18,39 @@ export default function Contact() {
       return;
     }
     setSending(true);
-    setTimeout(() => {
-      // Save locally for mock
-      const messages = JSON.parse(localStorage.getItem("utkarsh_messages") || "[]");
-      messages.push({ ...form, at: new Date().toISOString() });
-      localStorage.setItem("utkarsh_messages", JSON.stringify(messages));
+    
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error("EmailJS environment variables are missing.");
+      setSending(false);
+      return;
+    }
+
+    emailjs.send(
+      serviceId,
+      templateId,
+      {
+        name: form.name,
+        email: form.email,
+        message: form.message,
+        time: new Date().toLocaleString(),
+        title: "New Portfolio Message"
+      },
+      publicKey
+    )
+    .then(() => {
       toast.success("message sent — i'll reply within 24h");
       setForm({ name: "", email: "", message: "" });
       setSending(false);
-    }, 800);
+    })
+    .catch((error) => {
+      console.error(error);
+      toast.error("something went wrong. please try again later.");
+      setSending(false);
+    });
   };
 
   return (
