@@ -59,8 +59,8 @@ export const projects = [
     description:
       "A full-stack Learning Management System with an AI-powered voice assistant for hands-free course navigation and instant answers. Built with Context API for auth + course tracking, and NLP APIs for voice interaction.",
     tech: ["Next.js", "TypeScript", "Supabase", "VAPI"],
-    image: "https://images.unsplash.com/photo-1763718528755-4bca23f82ac3",
-    link: "https://github.com/Utkarshsingh112",
+    image: "public/lms-ai.jpg",
+    link: "https://lms-ai-ten.vercel.app/",
     accent: "coral",
   },
   {
@@ -71,8 +71,8 @@ export const projects = [
     description:
       "An online platform to swap old clothes for new ones, token points, or instant cash via online payment. A real reward loop for sustainable fashion.",
     tech: ["React", "Express", "MongoDB", "Stripe", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1771923082503-0a3381c46cef",
-    link: "https://github.com/Utkarshsingh112",
+    image: "public/swap-wise.jpg",
+    link: "https://rewear-community-clothing-exchange.vercel.app/",
     accent: "sage",
   },
   {
@@ -83,8 +83,8 @@ export const projects = [
     description:
       "A networking platform where developers sign up to follow tech news, events & happenings worldwide. Optimized image handling with Cloudinary CDN cut initial load time by 40%.",
     tech: ["Next.js", "TypeScript", "MongoDB", "Zustand", "Cloudinary"],
-    image: "https://images.pexels.com/photos/10020092/pexels-photo-10020092.jpeg",
-    link: "https://github.com/Utkarshsingh112",
+    image: "public/devconnect.jpg",
+    link: "https://devconnect-rluw.vercel.app/",
     accent: "blue",
   },
   {
@@ -93,10 +93,10 @@ export const projects = [
     year: "2024",
     type: "Web Experience",
     description:
-      "A fully responsive personal portfolio with mobile-first design. Hit a 95+ Lighthouse score via image optimization, code-splitting, and Core Web Vitals tuning.",
+      "A fully responsive personal portfolio with mobile-first design. Hit a 75 Lighthouse score via image optimization, code-splitting, and Core Web Vitals tuning.",
     tech: ["React", "Next.js", "Tailwind", "EmailJS"],
-    image: "https://images.unsplash.com/photo-1540397106260-e24a507a08ea",
-    link: "https://github.com/Utkarshsingh112",
+    image: "public/previous-portfolio.jpg",
+    link: "https://utkarsh-portfolio-utkarsh-singhs-projects-4e5eda89.vercel.app/",
     accent: "mustard",
   },
 ];
