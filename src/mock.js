@@ -61,6 +61,7 @@ export const projects = [
     tech: ["Next.js", "TypeScript", "Supabase", "VAPI"],
     image: "public/lms-ai.jpg",
     link: "https://lms-ai-ten.vercel.app/",
+    github: "https://github.com/Utkarshsingh112",
     accent: "coral",
   },
   {
@@ -73,6 +74,7 @@ export const projects = [
     tech: ["React", "Express", "MongoDB", "Stripe", "Tailwind"],
     image: "public/swap-wise.jpg",
     link: "https://rewear-community-clothing-exchange.vercel.app/",
+    github: "https://github.com/Utkarshsingh112",
     accent: "sage",
   },
   {
@@ -85,6 +87,7 @@ export const projects = [
     tech: ["Next.js", "TypeScript", "MongoDB", "Zustand", "Cloudinary"],
     image: "public/devconnect.jpg",
     link: "https://devconnect-rluw.vercel.app/",
+    github: "https://github.com/Utkarshsingh112",
     accent: "blue",
   },
   {
@@ -97,6 +100,7 @@ export const projects = [
     tech: ["React", "Next.js", "Tailwind", "EmailJS"],
     image: "public/previous-portfolio.jpg",
     link: "https://utkarsh-portfolio-utkarsh-singhs-projects-4e5eda89.vercel.app/",
+    github: "https://github.com/Utkarshsingh112",
     accent: "mustard",
   },
 ];

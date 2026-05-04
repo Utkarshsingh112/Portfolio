@@ -1,5 +1,5 @@
 import { projects } from "../mock";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 
 const accentMap = {
   coral: "#e85d4e",
@@ -31,9 +31,8 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-10">
           {projects.map((p, idx) => (
-            <a
+            <div
               key={p.id}
-              href={p.link}
               className={`group block tilt-hover ${
                 idx % 2 === 1 ? "md:translate-y-12" : ""
               }`}
@@ -52,8 +51,29 @@ export default function Projects() {
                 >
                   {p.type}
                 </div>
-                <div className="absolute bottom-4 right-4 w-12 h-12 bg-[#f5f1e8] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <ArrowUpRight size={22} className="text-[#1a1a1a]" />
+                <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-[#f5f1e8] flex items-center justify-center hover:bg-[#1a1a1a] hover:text-[#f5f1e8] transition-colors text-[#1a1a1a]"
+                      title="View Code"
+                    >
+                      <Github size={22} />
+                    </a>
+                  )}
+                  {p.link && (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-[#f5f1e8] flex items-center justify-center hover:bg-[#1a1a1a] hover:text-[#f5f1e8] transition-colors text-[#1a1a1a]"
+                      title="Live Preview"
+                    >
+                      <ArrowUpRight size={22} />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -78,7 +98,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
