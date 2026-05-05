@@ -6,7 +6,7 @@ const Preloader = ({ onComplete }) => {
     // Total animation lasts ~3.2s before we call onComplete to unmount
     const timer = setTimeout(() => {
       onComplete();
-    }, 3200);
+    }, 2300);
     return () => clearTimeout(timer);
   }, [onComplete]);
 
@@ -16,7 +16,7 @@ const Preloader = ({ onComplete }) => {
       initial={{ y: 0 }}
       exit={{ 
         y: "-100vh", 
-        transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.3 } 
+        transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.1 } 
       }}
     >
       <motion.div 
